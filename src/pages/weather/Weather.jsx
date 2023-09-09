@@ -24,7 +24,6 @@ function Weather() {
 
     let response = await fetch(url);
     let data = await response.json();
-    console.log("data: ", data);
 
     const humidity = document.getElementsByClassName("humidity-percent");
     const wind = document.getElementsByClassName("wind-percent");
@@ -81,11 +80,15 @@ function Weather() {
           <img src={Search} alt="" />
         </button>
       </div>
-      <div className="weather-image">
-        <img src={icon} alt="" />
+      <div className="flex-icon">
+        <div>
+          <div className="weather-temp">31 ℃</div>
+          <div className="weather-location">London</div>
+        </div>
+        <div className="weather-image">
+          <img src={icon} alt="" />
+        </div>
       </div>
-      <div className="weather-temp">24℃</div>
-      <div className="weather-location">London</div>
       <div className="data-container">
         <div className="element">
           <img src={Hummidity} alt="" className="icon" />
